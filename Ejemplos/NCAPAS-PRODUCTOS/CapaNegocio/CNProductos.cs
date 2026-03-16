@@ -20,5 +20,11 @@ namespace CapaNegocio
             dt = objetoCD.Mostrar();
             return dt;
         }
+
+
+        public void InsertarProducto(string nombre, string descripcion, string marca, float precio, int stock)
+        {
+            objetoCD.Insertar(nombre, descripcion, marca, precio, stock);
+        }
     }
 }
