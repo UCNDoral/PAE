@@ -11,7 +11,7 @@ namespace CapaDatos
 {
     internal class CD_Conexion
     {
-        private SqlConnection Conexion = new SqlConnection("Server=localhost; Database=Prueba; Integrated Security=true");
+        private SqlConnection Conexion = new SqlConnection("Server=D-DTCING\\SQLSERVER2025; Database=Practica; Integrated Security=true");
 
 
         public SqlConnection AbrirConexion()

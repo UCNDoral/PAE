@@ -10,7 +10,7 @@ using CapaDatos;
 
 namespace CapaNegocio
 {
-    internal class CNProductos
+    public class CNProductos
     {
         private CDProductos objetoCD = new CDProductos();
 

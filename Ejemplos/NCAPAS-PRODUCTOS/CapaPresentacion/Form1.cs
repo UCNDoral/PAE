@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 
 namespace CapaPresentacion
 {
@@ -15,6 +16,18 @@ namespace CapaPresentacion
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MostrarProductos();
+        }
+
+
+        private void MostrarProductos()
+        {
+            CNProductos objetoCN = new CNProductos();
+            dgvProductos.DataSource = objetoCN.MostrarProducto();
         }
     }
 }
