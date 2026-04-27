@@ -38,7 +38,7 @@ namespace CapaDatos
                 {
                     try
                     {
-                        // 1️⃣ Insertar encabezado de factura y obtener el ID generado
+                        //Insertar encabezado de factura y obtener el ID generado
                         using (SqlCommand cmdFact = new SqlCommand(
                             "INSERT INTO Facturas (IdCliente, Fecha) VALUES (@IdCliente, @Fecha); SELECT SCOPE_IDENTITY();",
                             conn, transaccion))
@@ -48,7 +48,7 @@ namespace CapaDatos
                             idFacturaGenerada = Convert.ToInt32(cmdFact.ExecuteScalar());
                         }
 
-                        // 2️⃣ Insertar cada detalle y descontar stock
+                        // Insertar cada detalle y descontar stock
                         foreach (var det in detalles)
                         {
                             using (SqlCommand cmdDet = new SqlCommand(

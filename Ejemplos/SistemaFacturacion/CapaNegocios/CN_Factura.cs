@@ -13,7 +13,7 @@ namespace CapaNegocios
 
         public int RegistrarFactura(int idCliente, DateTime fecha, List<DetalleFacturaItem> detalles)
         {
-            // ✅ Validaciones de negocio antes de tocar la BD
+            //Validaciones de negocio antes de tocar la BD
             if (idCliente <= 0) throw new ArgumentException("Debe seleccionar un cliente válido.");
             if (detalles == null || detalles.Count == 0) throw new ArgumentException("La factura debe contener al menos un producto.");
 

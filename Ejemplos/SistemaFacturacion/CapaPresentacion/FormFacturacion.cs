@@ -125,14 +125,14 @@ namespace CapaPresentacion
                     carrito
                 );
 
-                MessageBox.Show($"✅ Factura #{idFactura} generada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Factura #{idFactura} generada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 carrito.Clear();
                 ActualizarGrid();
                 CargarCombos(); // Refrescar ComboBox de productos (stock actualizado)
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"❌ Error al facturar: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al facturar: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

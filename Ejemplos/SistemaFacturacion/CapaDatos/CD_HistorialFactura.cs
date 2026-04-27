@@ -28,7 +28,7 @@ namespace CapaDatos
                 GROUP BY F.IdFactura, C.Nombre, C.Apellido, F.Fecha
                 ORDER BY F.IdFactura DESC";
 
-            // ✅ 'using' garantiza cierre automático. Usa la versión corregida de CD_Conexion
+            //'using' garantiza cierre automático. Usa la versión corregida de CD_Conexion
             using (SqlConnection conn = new CD_Conexion().ObtenerConexion())
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
