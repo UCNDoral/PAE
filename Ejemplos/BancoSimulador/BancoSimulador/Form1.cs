@@ -88,7 +88,67 @@ namespace BancoSimulador
             CancellationToken token = cts.Token;
 
 
+            hiloDeposito = new Thread(() =>
+            {
 
+                try
+                {
+                    for (int i = 1; i <= 10; i++)
+                    {
+                        //revisamos si el usuario presiono cancelar
+                        //si el token fue cancelado, lanza operation
+
+                        token.ThrowIfCancellationRequested();
+
+                        //Pedir permiso, si ya hay dos hilos adentro, este espera
+                        semaphore.Wait(token);
+
+                        try
+                        {
+                            Thread.Sleep(100);
+
+                            if (usarSincronizacion)
+                                cuenta.DepositarSeguro(100); //🔐🔐
+                            else
+                                cuenta.DepositarInseguro(100);
+
+                            //leer el nuevo saldo 
+                            int nuevoSaldo = cuenta.ObtenerSaldo();
+                            AgregarLog($" [Deposito #{i:D2}] +$100 -> Saldo: {nuevoSaldo}");
+                            ActualizarSaldoUI(nuevoSaldo);
+
+                        }
+                        finally
+                        {
+                            //Siempre liberamos el semaforo 
+                            semaphore.Release();
+                        }
+
+                    }
+                    AgregarLog("Hilo de DEPOSITOS completado");
+                }
+                catch (OperationCanceledException)
+                {
+                    AgregarLog("Hilo de deposito cancelado por el usuario");
+                }
+                catch (Exception ex) 
+                {
+                    AgregarLog($" Error en Depositos: {ex.Message}");
+
+                }
+                finally
+                {
+                    VerificarFinalizacion();
+                }
+
+
+
+
+
+            });
+
+
+            hiloDeposito.Start();
         }
 
         private void AgregarLog( string mensaje)
@@ -110,6 +170,60 @@ namespace BancoSimulador
                 txtLog.AppendText(linea + Environment.NewLine);
 
                 txtLog.ScrollToCaret();
+            }
+        }
+
+        private void ActualizarSaldoUI(int saldo)
+        {
+            if (txtLog.InvokeRequired)
+            {
+                txtLog.Invoke((Action)(() =>
+                {
+                    lblSaldo.Text = $"{saldo}";
+
+                    lblSaldo.ForeColor = saldo >= 1000 ? Color.Green : Color.OrangeRed;
+                }));
+            }
+            else
+            {
+                lblSaldo.Text = $"{lblSaldo}";
+
+            }
+        }
+
+        private void VerificarFinalizacion()
+        {
+            lock (lockFinalizacion)
+            {
+                hilosTerminados++;
+
+                if(hilosTerminados >= 2)
+                {
+                    int saldoFinal = cuenta.ObtenerSaldo();
+
+                    //el saldo correcto: 1000 Iniales  + (10 * 100) - (10*80 retiros)
+
+                    bool esCorrecto = saldoFinal == 1200;
+
+                    AgregarLog("-----------------------------");
+                    AgregarLog(" RESULTADO FINAL");
+                    AgregarLog($"   Saldo Final obtenido: {saldoFinal}");
+                    AgregarLog($"   Saldo esperado:     $1,200.00");
+                    AgregarLog(esCorrecto
+                        ? "CORRECTO - No hubo condicion de carrera"
+                        : "INCORRECTO - Condicion de carrera detectada");
+                    AgregarLog("-----------------------------");
+
+
+
+                    this.Invoke((Action)(() =>
+                    {
+                        btnIniciar.Enabled = true;
+                        btnCancelar.Enabled = false;
+                        ActialzarUI();
+                    }));
+
+                }
             }
         }
 
