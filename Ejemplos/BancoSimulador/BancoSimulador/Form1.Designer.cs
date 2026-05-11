@@ -109,6 +109,7 @@
             btnCancelar.TabIndex = 1;
             btnCancelar.Text = "⏹ CANCELAR";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnIniciar
             // 
@@ -134,6 +135,7 @@
             btnLimpiar.TabIndex = 2;
             btnLimpiar.Text = "🗑️ Limpiar Log";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // grpLog
             // 
@@ -171,7 +173,6 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Simulador Bancario - UCN";
-            Load += Form1_Load;
             grpCuenta.ResumeLayout(false);
             grpCuenta.PerformLayout();
             grpOpciones.ResumeLayout(false);
