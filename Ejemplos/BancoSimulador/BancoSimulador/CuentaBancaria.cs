@@ -22,7 +22,7 @@ namespace BancoSimulador
         // Constructor: recibe el saldo inicial de la cuenta
         public CuentaBancaria(int saldoInicial)
         {
-            saldo = saldoInicial;
+            this.saldo = saldoInicial;
         }
 
         // ═════════════════════════════════════════════════════════════

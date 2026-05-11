@@ -121,6 +121,7 @@
             btnIniciar.TabIndex = 0;
             btnIniciar.Text = "▶ INICIAR SIMULACIÓN";
             btnIniciar.UseVisualStyleBackColor = false;
+            btnIniciar.Click += btnIniciar_Click;
             // 
             // btnLimpiar
             // 
@@ -170,6 +171,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Simulador Bancario - UCN";
+            Load += Form1_Load;
             grpCuenta.ResumeLayout(false);
             grpCuenta.PerformLayout();
             grpOpciones.ResumeLayout(false);
