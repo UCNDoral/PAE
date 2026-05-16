@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CapaEntidades/CapaEntidades.csproj" />
+  <Project Path="TiendaApp.Presentacion/TiendaApp.Presentacion.csproj" />
+</Solution>
