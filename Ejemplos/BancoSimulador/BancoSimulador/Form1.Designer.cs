@@ -109,6 +109,7 @@
             btnCancelar.TabIndex = 1;
             btnCancelar.Text = "⏹ CANCELAR";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnIniciar
             // 
@@ -134,6 +135,7 @@
             btnLimpiar.TabIndex = 2;
             btnLimpiar.Text = "🗑️ Limpiar Log";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // grpLog
             // 
