@@ -47,5 +47,15 @@ namespace CapaPresentacion
 
 
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(255, 192, 255);
+        }
     }
 }

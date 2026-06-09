@@ -121,6 +121,7 @@
             btnIniciar.TabIndex = 0;
             btnIniciar.Text = "▶ INICIAR SIMULACIÓN";
             btnIniciar.UseVisualStyleBackColor = false;
+            btnIniciar.Click += btnIniciar_Click;
             // 
             // btnLimpiar
             // 
