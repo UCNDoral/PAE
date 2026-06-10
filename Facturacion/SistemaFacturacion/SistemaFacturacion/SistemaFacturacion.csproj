@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net10.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -10,6 +10,20 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Motor de reportes open source, compatible .NET 8 -->
+    <PackageReference Include="FastReport.OpenSource"
+                      Version="2026.2.1" />
+
+    <!-- Plugin de exportación a PDF para FastReport.OpenSource -->
+    <PackageReference Include="FastReport.OpenSource.Export.PdfSimple"
+                      Version="2026.2.1" />
+
+    <!-- Conexión SQL Server (ya existía) -->
+    <PackageReference Include="Microsoft.Data.SqlClient"
+                      Version="5.2.0" />
   </ItemGroup>
 
 </Project>

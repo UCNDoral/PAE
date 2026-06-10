@@ -64,5 +64,10 @@ namespace SistemaFacturacion.Forms
                 formulario.Show();
             }
         }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmReportes());
+        }
     }
 }

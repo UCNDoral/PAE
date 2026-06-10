@@ -16,7 +16,7 @@ namespace SistemaFacturacion.DataAccess
     {
         // Ajusta Server, Database, User y Password a tu entorno
         private const string CadenaConexion =
-            "Data Source=DESKTOP-LARS505;Initial Catalog=FacturacionDBEjemplo;Integrated Security=True;Trust Server Certificate=True";
+            "Data Source=D-DTCING\\SQLSERVER2025;Initial Catalog=FacturacionDBEjemplo;Integrated Security=True;Trust Server Certificate=True";
 
         /// <summary>
         /// Retorna una conexión ABIERTA lista para usar.

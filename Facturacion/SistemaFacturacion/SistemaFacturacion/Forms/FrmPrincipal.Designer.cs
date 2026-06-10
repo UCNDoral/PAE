@@ -34,12 +34,13 @@
             productosToolStripMenuItem = new ToolStripMenuItem();
             operacionesToolStripMenuItem = new ToolStripMenuItem();
             nuevaFacturaToolStripMenuItem = new ToolStripMenuItem();
+            reportesToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { catalogosToolStripMenuItem, operacionesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { catalogosToolStripMenuItem, operacionesToolStripMenuItem, reportesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -56,14 +57,14 @@
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(180, 22);
+            clientesToolStripMenuItem.Size = new Size(128, 22);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // productosToolStripMenuItem
             // 
             productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            productosToolStripMenuItem.Size = new Size(180, 22);
+            productosToolStripMenuItem.Size = new Size(128, 22);
             productosToolStripMenuItem.Text = "Productos";
             productosToolStripMenuItem.Click += productosToolStripMenuItem_Click;
             // 
@@ -80,6 +81,13 @@
             nuevaFacturaToolStripMenuItem.Size = new Size(180, 22);
             nuevaFacturaToolStripMenuItem.Text = "Nueva Factura";
             nuevaFacturaToolStripMenuItem.Click += nuevaFacturaToolStripMenuItem_Click;
+            // 
+            // reportesToolStripMenuItem
+            // 
+            reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            reportesToolStripMenuItem.Size = new Size(65, 20);
+            reportesToolStripMenuItem.Text = "Reportes";
+            reportesToolStripMenuItem.Click += reportesToolStripMenuItem_Click;
             // 
             // FrmPrincipal
             // 
@@ -104,5 +112,6 @@
         private ToolStripMenuItem productosToolStripMenuItem;
         private ToolStripMenuItem operacionesToolStripMenuItem;
         private ToolStripMenuItem nuevaFacturaToolStripMenuItem;
+        private ToolStripMenuItem reportesToolStripMenuItem;
     }
 }
