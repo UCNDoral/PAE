@@ -34,12 +34,13 @@
             productosToolStripMenuItem = new ToolStripMenuItem();
             operacionesToolStripMenuItem = new ToolStripMenuItem();
             nuevaFacturaToolStripMenuItem = new ToolStripMenuItem();
+            reportesToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { catalogosToolStripMenuItem, operacionesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { catalogosToolStripMenuItem, operacionesToolStripMenuItem, reportesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -81,6 +82,13 @@
             nuevaFacturaToolStripMenuItem.Text = "Nueva Factura";
             nuevaFacturaToolStripMenuItem.Click += nuevaFacturaToolStripMenuItem_Click;
             // 
+            // reportesToolStripMenuItem
+            // 
+            reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            reportesToolStripMenuItem.Size = new Size(65, 20);
+            reportesToolStripMenuItem.Text = "Reportes";
+            reportesToolStripMenuItem.Click += reportesToolStripMenuItem_Click;
+            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -104,5 +112,6 @@
         private ToolStripMenuItem productosToolStripMenuItem;
         private ToolStripMenuItem operacionesToolStripMenuItem;
         private ToolStripMenuItem nuevaFacturaToolStripMenuItem;
+        private ToolStripMenuItem reportesToolStripMenuItem;
     }
 }

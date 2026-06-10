@@ -43,6 +43,11 @@ namespace SistemaFacturacion.Forms
             AbrirFormulario(new FrmFactura());
         }
 
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmReportes());
+        }
+
         /// <summary>
         /// Abre el formulario como hijo MDI.
         /// Si ya está abierto, lo trae al frente en vez de duplicarlo.

@@ -20,6 +20,7 @@ namespace SistemaFacturacion.Models
         public decimal IVA { get; set; }
         public decimal Total { get; set; }
         public string Estado { get; set; } = "ACTIVA";
+        public string NombreCliente => Cliente?.Nombre ?? string.Empty;
 
         // Navegación: cliente asociado (se llena desde el DA)
         public Cliente? Cliente { get; set; }
