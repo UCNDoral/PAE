@@ -1,39 +1,3 @@
-<<<<<<< HEAD
-using System;
-using System.Reflection.PortableExecutable;
-using System.Threading;
-using System.Windows.Forms;
-
-namespace BancoSimulador
-{
-    public partial class Form1 : Form
-    {
-
-        //varibles compartidas entre hilos
-        //estas variables son accedidas por multiples hilos almismo tiempo
-
-        //la cuenta bancaria que ambos hilos van a modificar
-        private CuentaBancaria cuenta = new CuentaBancaria(1000);
-
-        private CancellationTokenSource cst;
-
-        private Thread hiloDeposito;
-        private Thread hiloRetiro;
-
-        //SEMAPHORESLIM
-        private SemaphoreSlim semaphore = new SemaphoreSlim(2, 2);
-
-        private bool usarSincronizacion = false;
-
-        private int hilossTerminado = 0;
-
-
-        private readonly object lockFinalizacion = new object();
-
-
-
-
-=======
 ﻿namespace BancoSimulador
 {
     public partial class Form1 : Form
@@ -75,40 +39,10 @@ namespace BancoSimulador
         // ─────────────────────────────────────────────────────────────
         // CONSTRUCTOR
         // ─────────────────────────────────────────────────────────────
->>>>>>> 291eee6f95dd3218b95768c67933d7bf9cc3b88d
         public Form1()
         {
             InitializeComponent();
 
-<<<<<<< HEAD
-            ActualizarUI();
-        }
-
-
-
-        private void ActualizarUI()
-        {
-            lblSaldo.Text = $"{cuenta.ObtenerSaldo():C}";
-            lblSaldo.ForeColor = Color.Green;
-        }
-
-        private void btnIniciar_Click(object sender, EventArgs e)
-        {
-            //reiniciar cuenta bancaria
-             cuenta = new CuentaBancaria(1000);
-
-            //creamos un nuevo token de cancelacion
-            //si el otro fue cancelado, este empieza en limpio.
-            cst = new CancellationTokenSource();
-
-            //reiniciar el contador de hilos terminados
-
-            hilossTerminado = 0;
-
-
-            usarSincronizacion = chkSincronizacion.Checked;
-
-=======
             // Mostramos el saldo inicial en la pantalla al arrancar
             ActualizarUI();
         }
@@ -419,7 +353,6 @@ namespace BancoSimulador
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtLog.Clear();
->>>>>>> 291eee6f95dd3218b95768c67933d7bf9cc3b88d
         }
     }
 }
